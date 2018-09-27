@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 from pgi.repository import Notify
 import requests
 from time import sleep

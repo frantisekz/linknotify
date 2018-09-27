@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 from flask import Flask, request, jsonify
 from collections import deque
 import zmq
