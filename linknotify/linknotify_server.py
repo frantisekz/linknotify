@@ -2,10 +2,12 @@ from flask import Flask, request, jsonify
 from collections import deque
 import zmq
 
+from . import settings
+
 app = Flask(__name__)
 context = zmq.Context()
 zmq_socket = context.socket(zmq.PUSH)
-zmq_socket.bind("tcp://127.0.0.1:5557")
+zmq_socket.bind(settings.SERVER)
 
 
 @app.route("/send", methods=['POST'])

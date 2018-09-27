@@ -3,11 +3,13 @@ import requests
 from time import sleep
 import zmq
 
+from . import settings
+
 Notify.init("linknotify")
 
 context = zmq.Context()
 consumer_receiver = context.socket(zmq.PULL)
-consumer_receiver.connect("tcp://127.0.0.1:5557")
+consumer_receiver.connect(settings.SERVER)
 
 def main():
     while True:
